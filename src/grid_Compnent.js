@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import {
   gridArea,
   display,
@@ -18,12 +18,12 @@ const Container = styled.div`
         ${minHeight}
         ${display}
         ${gridGap}
-            ${gridTemplateAreas}
-        grid-template-areas:${({ gridTemplateAreas }) => gridTemplateAreas};
+        ${gridRow}
+        ${gridTemplateAreas}
 `;
 
 class GridBuilder extends Component {
-  serializedArea(area) {
+  serializeArea(area) {
     if (!Array.isArray(area)) {
       console.error("Please supply Array to area prop of GridBuilder");
       return;
@@ -40,13 +40,43 @@ class GridBuilder extends Component {
     });
 
     const array = convertedData.map(val => `"${val}"`);
-    const serializedArea = array.reduce((acc, val) => acc + val);
+    const serializeArea = array.reduce((acc, val) => acc + val);
 
-    return serializedArea;
+    return serializeArea;
   }
 
+  buildGrid(input) {
+    let AreaDepth = this.getArrayDepth(input);
+    const Area = [];
+
+    if (AreaDepth > 2) {
+      input.forEach(tem => Area.push(this.serializeArea(tem)));
+    } else {
+      Area.push(this.serializeArea(input));
+    }
+    console.log(Area);
+
+    return Area;
+  }
+
+  getArrayDepth = array => {
+    let TrueDepth = 0;
+
+    const dig = (e, depth) => {
+      if (Array.isArray(e)) {
+        depth && (depth = e.length);
+        depth -= 1;
+        ++TrueDepth;
+        dig(e[0]);
+      }
+    };
+    dig(array);
+
+    return TrueDepth;
+  };
+
   render() {
-    const {template} = this.props;
+    const { template } = this.props;
     const children = React.Children.map(this.props.children, (child, i) => {
       const areaName = "box" + i;
       return React.cloneElement(child, {
@@ -54,13 +84,13 @@ class GridBuilder extends Component {
       });
     });
 
-    const Template = css`
-      ${this.serializedArea(template)}
-    `;
+    // const Template = css`
+    //   ${this.serializedArea(template)}
+    // `;
 
     return (
       <Container
-      gridTemplateAreas={Template}
+        gridTemplateAreas={this.buildGrid(template)}
         display="grid"
         minWidth="100%"
         minHeight="100%"
