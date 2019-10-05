@@ -40,8 +40,8 @@ class GridBuilder extends Component {
     });
 
     const array = convertedData.map(val => `"${val}"`);
+    console.log(array);
     const serializeArea = array.reduce((acc, val) => acc + val);
-
     return serializeArea;
   }
 
@@ -83,10 +83,6 @@ class GridBuilder extends Component {
         gridArea: areaName
       });
     });
-
-    // const Template = css`
-    //   ${this.serializedArea(template)}
-    // `;
 
     return (
       <Container

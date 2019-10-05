@@ -1,27 +1,10 @@
 import React from "react";
-import GridBuilder from "./grid_Compnent";
+// import GridBuilder from "./gridComponent";
+import { GridBuilder } from "./gridBuilder";
 import "./App.css";
-import styled, { css } from "styled-components";
+import { Box } from "rebass";
 
-import {
-  gridArea,
-  display,
-  color,
-  minWidth,
-  minHeight,
-  gridGap,
-  gridRow,
-  gridTemplateColumns
-} from "styled-system";
-
-const Dummy = styled.div`
-
-        ${gridArea}
-        ${color}
-        ${minWidth}
-        ${minHeight}
-        grid-template-areas:${({ gridTemplateAreas }) => gridTemplateAreas};
-`;
+const Dummy = Box;
 
 const Template = {
   page: [[1, 1, 1, 1], [2, 0, 0, 0], [3, 0, 0, 0], [4, 0, 0, 0], [5, 5, 5, 5]],
@@ -33,7 +16,11 @@ const Template = {
 function App() {
   return (
     <div className="App">
-      <GridBuilder gridGap="1em" template={Template.page}>
+      <GridBuilder
+        style={{ minHeight: "100%", minWidth: "100%" }}
+        gridGap="1em"
+        template={Template.page}
+      >
         <GridBuilder
           gridGap="1em"
           template={[Template.dash[0], Template.dash[1]]}
