@@ -16,12 +16,21 @@ In the example bellow , each child compnent inside grid builder is given a grid 
 ```
 const Template = {
   page: [
-    [1, 1, 1, 1],
-    [2, 0, 0, 0],
-    [3, 0, 0, 0],
-    [4, 0, 0, 0],
-    [5, 5, 5, 5]
-    ],
+  [1, 1, 1, 1],
+  [2, 0, 0, 0],
+  [3, 0, 0, 0],
+  [4, 0, 0, 0],
+  [5, 5, 5, 5]
+  ],
+  dash: [[
+  [0, 1, 1],
+  [0, 1, 1],
+  [0, 2, 2]
+  ],[
+  [0, 0, 1],
+  [0, 0, 1],
+  [2, 2, 2]
+  ]]
 };
 
 function App() {
