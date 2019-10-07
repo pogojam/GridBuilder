@@ -6,7 +6,7 @@ Build layouts quickly using matrixes to represent component positioning. Supply 
 
 In the example bellow , each child compnent inside grid builder is given a grid area coresponding to its index inside the gridbuilder.
 
-`
+```
 const Template = {
 page: [
 [1, 1, 1, 1],
@@ -38,4 +38,4 @@ template={Template.page} >
 </div>
 );
 }
-`
+```
