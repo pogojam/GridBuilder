@@ -2,10 +2,12 @@
 ![gridlogo](https://res.cloudinary.com/dxjse9tsv/image/upload/v1570488103/Logos/GridBuilder.svg)
 
 Build layouts quickly using matrixes to represent components positioning. 
+
 ## Usage
+
 ``` npm i react-gridbuilder```
 
-Supply the Gridbuilder component with multiple matrices for mobile devices.Grid component uses  [styled system](https://github.com/styled-system/styled-system) .
+Supply the Gridbuilder component with multiple matrices for mobile devices or a single matrix. Grid component uses  [styled system](https://github.com/styled-system/styled-system) for prop styling .
 
 ### Template Formating
 
