@@ -1,6 +1,6 @@
 ## GridBuilder
 
-Build layouts quickly using matrixes to represent component positioning. Supply the Gridbuilder component with multiple matrices for mobile devices.Grid component uses  [link styled system](https://github.com/styled-system/styled-system) .
+Build layouts quickly using matrixes to represent component positioning. Supply the Gridbuilder component with multiple matrices for mobile devices.Grid component uses  [styled system](https://github.com/styled-system/styled-system) .
 
 ### Template Formating
 
