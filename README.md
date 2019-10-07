@@ -47,4 +47,4 @@ function App() {
   );
 }
 ```
-
+[layout example](https://res.cloudinary.com/dxjse9tsv/image/upload/v1570489149/git/Screen_Shot_2019-10-07_at_3.52.53_PM.png)
