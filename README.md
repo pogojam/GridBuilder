@@ -1,5 +1,5 @@
 # GridBuilder
-[gridlogo](https://res.cloudinary.com/dxjse9tsv/image/upload/v1570488103/Logos/GridBuilder.svg)
+![gridlogo](https://res.cloudinary.com/dxjse9tsv/image/upload/v1570488103/Logos/GridBuilder.svg)
 
 Build layouts quickly using matrixes to represent component positioning. Supply the Gridbuilder component with multiple matrices for mobile devices.Grid component uses  [styled system](https://github.com/styled-system/styled-system) .
 
