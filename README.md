@@ -1,7 +1,7 @@
 # GridBuilder
 ![gridlogo](https://res.cloudinary.com/dxjse9tsv/image/upload/v1570488103/Logos/GridBuilder.svg)
 
-Build layouts quickly using matrixes to represent components positioning. 
+Build layouts quickly using matrixes to represent components gid positioning. 
 
 ## Usage
 
