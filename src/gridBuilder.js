@@ -24,7 +24,7 @@ const addPrefix = prefix => vals =>
 
 const serialize = css => {
   const arrString = css.map(val => `"${val}"`);
-  return arrString.reduce((acc, val) => acc + val);
+  return arrString.reduce((acc, val) => acc + val, "");
 };
 
 const getArrayDepth = array => {
@@ -48,11 +48,6 @@ const attachProps = (children, setProps) => {
   );
 };
 
-const logger = item => {
-  console.log(item);
-  return item;
-};
-
 export const GridBuilder = ({
   template = [],
   prefix = "box",
@@ -64,9 +59,10 @@ export const GridBuilder = ({
 
   useEffect(() => {
     const setTemplate = input =>
-      pipe(input)(addPrefix(prefix), serialize, logger, setTemplateState);
+      pipe(input)(addPrefix(prefix), serialize, setTemplateState);
 
     if (isMobile) {
+      console.log(template);
       template.map(temp => setTemplate(temp));
     } else {
       setTemplate(template);
