@@ -9,7 +9,7 @@ const Container = styled(Box)`
 `;
 
 const pipe = input => (...arr) => {
-  arr.reduce((acc, func) => func(acc), input);
+  return arr.reduce((acc, func) => func(acc), input);
 };
 
 const addPrefix = prefix => vals =>
@@ -58,22 +58,24 @@ export const GridBuilder = ({
   const isMobile = getArrayDepth(template) > 2;
 
   useEffect(() => {
-    const setTemplate = input =>
-      pipe(input)(addPrefix(prefix), serialize, setTemplateState);
+    const setTemplate = input => pipe(input)(addPrefix(prefix), serialize);
 
     if (isMobile) {
-      console.log(template);
-      template.map(temp => setTemplate(temp));
+      console.log("This is using a mobile layout", template);
+      const gridArea = template.map(temp => setTemplate(temp));
+      setTemplateState(gridArea);
+      console.log(computedTemplate);
     } else {
-      setTemplate(template);
+      const gridArea = setTemplate(template);
+      setTemplateState(gridArea);
     }
-  }, [isMobile, prefix, template]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const gridChildren = attachProps(children, i => ({
     style: { gridArea: prefix + i }
   }));
 
-  console.log(computedTemplate);
   return (
     <Container display="grid" gridTemplateAreas={computedTemplate} {...props}>
       {gridChildren}

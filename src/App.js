@@ -6,8 +6,25 @@ import { Box } from "rebass";
 const Dummy = Box;
 
 const Template = {
-  page: [[1, 1, 1, 1], [2, 0, 0, 0], [3, 0, 0, 0], [4, 0, 0, 0], [5, 5, 5, 5]],
-  dash: [[[0, 1, 1], [0, 1, 1], [0, 2, 2]], [[0, 0, 1], [0, 0, 1], [2, 2, 2]]]
+  page: [
+    [1, 1, 1, 1],
+    [2, 0, 0, 0],
+    [3, 0, 0, 0],
+    [4, 0, 0, 0],
+    [5, 5, 5, 5]
+  ],
+  dash: [
+    [
+      [0, 1, 1],
+      [0, 1, 1],
+      [0, 2, 2]
+    ],
+    [
+      [0, 0, 1],
+      [0, 0, 1],
+      [2, 2, 2]
+    ]
+  ]
 };
 
 function App() {
@@ -19,7 +36,7 @@ function App() {
         template={Template.page}
       >
         <GridBuilder gridGap="1em" template={Template.dash}>
-          <Dummy bg={["blue", "black"]} />
+          <Dummy bg={["black"]} />
           <Dummy bg="blue" />
           <Dummy bg="blue" />
         </GridBuilder>
