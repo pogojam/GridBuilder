@@ -16,14 +16,12 @@ In the example bellow , each child compnent inside grid builder is given a grid 
 ```
 const Template = {
   page: [
-<<<<<<< HEAD
     [1, 1, 1, 1],
     [2, 0, 0, 0],
     [3, 0, 0, 0],
     [4, 0, 0, 0],
     [5, 5, 5, 5]
     ],
-=======
   [1, 1, 1, 1],
   [2, 0, 0, 0],
   [3, 0, 0, 0],
@@ -39,7 +37,6 @@ const Template = {
   [0, 0, 1],
   [2, 2, 2]
   ]]
->>>>>>> 870c78b8f1756b8d8908284df9115fd9ba51c376
 };
 
 function App() {
@@ -65,7 +62,5 @@ function App() {
   );
 }
 ```
-<<<<<<< HEAD
-=======
 ![layout example](https://res.cloudinary.com/dxjse9tsv/image/upload/v1570489149/git/Screen_Shot_2019-10-07_at_3.52.53_PM.png)
->>>>>>> 870c78b8f1756b8d8908284df9115fd9ba51c376
+
